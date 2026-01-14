@@ -1,0 +1,423 @@
+@import "tailwindcss";
+
+/* =====================================================
+   🔥 TITANIUM & EMBER - Premium Executive Theme
+   Inspired by High-Fashion & Premium Hardware Design
+   ===================================================== */
+:root {
+  /* Primary - Ember Orange */
+  --primary: 18 100% 50%;
+  --primary-foreground: 0 0% 100%;
+  
+  /* Secondary - Warm Stone */
+  --secondary: 30 80% 55%;
+  --secondary-foreground: 0 0% 100%;
+  
+  /* Accent - Pure Ember */
+  --accent: 18 100% 50%;
+  --accent-foreground: 0 0% 100%;
+  
+  /* Background - Deep Olive Black (Titanium) */
+  --background: 50 8% 7%;
+  --background-start: 50 8% 6%;
+  --background-end: 50 6% 9%;
+  
+  /* Surface Colors - Stone Grey */
+  --card: 50 6% 11%;
+  --card-foreground: 45 10% 90%;
+  --popover: 50 6% 9%;
+  --popover-foreground: 45 10% 90%;
+  
+  /* Text Colors - Paper White */
+  --foreground: 45 10% 90%;
+  --muted: 45 6% 18%;
+  --muted-foreground: 45 10% 50%;
+  
+  /* Border & Dividers */
+  --border: 45 6% 16%;
+  --input: 45 6% 16%;
+  --ring: 18 100% 50%;
+  
+  /* Semantic Colors */
+  --success: 142 76% 36%;
+  --warning: 38 92% 50%;
+  --error: 0 84% 60%;
+  --info: 199 89% 48%;
+  
+  /* Ember Glow */
+  --ember: #FF4D00;
+  --ember-glow: 0 0 60px rgba(255, 77, 0, 0.4);
+  
+  /* Titanium */
+  --titanium: #1A1A17;
+  --stone: #242421;
+  
+  /* Radius */
+  --radius: 0.25rem;
+}
+
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-success: hsl(var(--success));
+  --color-warning: hsl(var(--warning));
+  --color-error: hsl(var(--error));
+  --color-info: hsl(var(--info));
+  --color-ember: #FF4D00;
+  --radius: 0.25rem;
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* =====================================================
+   Base Styles - Premium Feel
+   ===================================================== */
+* {
+  border-color: hsl(var(--border));
+}
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-gutter: stable;
+}
+
+body {
+  background: #1A1A17;
+  color: #E6E6E1;
+  font-feature-settings: "rlig" 1, "calt" 1, "ss01" 1;
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* =====================================================
+   Premium Scrollbar
+   ===================================================== */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted));
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #FF4D00;
+}
+
+/* =====================================================
+   Selection - Ember Highlight
+   ===================================================== */
+::selection {
+  background: rgba(255, 77, 0, 0.3);
+  color: #E6E6E1;
+}
+
+/* =====================================================
+   Premium Animations
+   ===================================================== */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(1deg); }
+}
+
+@keyframes pulse-ember {
+  0%, 100% { box-shadow: 0 0 20px rgba(255, 77, 0, 0.3); }
+  50% { box-shadow: 0 0 60px rgba(255, 77, 0, 0.6); }
+}
+
+@keyframes glow-line {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%) skewX(-15deg); }
+  100% { transform: translateX(200%) skewX(-15deg); }
+}
+
+@keyframes bounce-subtle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes text-glow {
+  0%, 100% { 
+    filter: drop-shadow(0 0 10px rgba(255, 77, 0, 0.5));
+  }
+  50% { 
+    filter: drop-shadow(0 0 20px rgba(255, 77, 0, 0.8));
+  }
+}
+
+.animate-gradient {
+  animation: gradient 3s ease infinite;
+}
+
+.animate-shimmer {
+  animation: shimmer 2s infinite;
+}
+
+.animate-bounce-subtle {
+  animation: bounce-subtle 2s ease-in-out infinite;
+}
+
+.animate-text-glow {
+  animation: text-glow 2s ease-in-out infinite;
+}
+
+@keyframes reveal-up {
+  from { 
+    opacity: 0; 
+    transform: translateY(40px); 
+    filter: blur(10px);
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+    filter: blur(0);
+  }
+}
+
+@keyframes text-reveal {
+  from { 
+    clip-path: inset(0 100% 0 0);
+  }
+  to { 
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+@keyframes grain {
+  0%, 100% { transform: translate(0, 0); }
+  10% { transform: translate(-5%, -10%); }
+  20% { transform: translate(-15%, 5%); }
+  30% { transform: translate(7%, -25%); }
+  40% { transform: translate(-5%, 25%); }
+  50% { transform: translate(-15%, 10%); }
+  60% { transform: translate(15%, 0%); }
+  70% { transform: translate(0%, 15%); }
+  80% { transform: translate(3%, 35%); }
+  90% { transform: translate(-10%, 10%); }
+}
+
+@keyframes ember-pulse {
+  0%, 100% { 
+    text-shadow: 0 0 20px rgba(255, 77, 0, 0.5),
+                 0 0 40px rgba(255, 77, 0, 0.3),
+                 0 0 60px rgba(255, 77, 0, 0.2);
+  }
+  50% { 
+    text-shadow: 0 0 30px rgba(255, 77, 0, 0.8),
+                 0 0 60px rgba(255, 77, 0, 0.5),
+                 0 0 90px rgba(255, 77, 0, 0.3);
+  }
+}
+
+@keyframes border-flow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-float { animation: float 6s ease-in-out infinite; }
+.animate-pulse-ember { animation: pulse-ember 2s ease-in-out infinite; }
+.animate-reveal-up { animation: reveal-up 0.8s ease-out forwards; }
+.animate-text-reveal { animation: text-reveal 1s ease-out forwards; }
+.animate-flicker { animation: flicker 3s ease-in-out infinite; }
+.animate-ember-pulse { animation: ember-pulse 3s ease-in-out infinite; }
+
+/* =====================================================
+   Ember Gradient Text
+   ===================================================== */
+.gradient-text {
+  background: linear-gradient(135deg, #FF4D00 0%, #FF8C00 50%, #FF4D00 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: border-flow 3s linear infinite;
+}
+
+.ember-text {
+  color: #FF4D00;
+  text-shadow: 0 0 30px rgba(255, 77, 0, 0.5);
+}
+
+/* =====================================================
+   Premium Card Styles
+   ===================================================== */
+.premium-card {
+  background: linear-gradient(145deg, #242421 0%, #1A1A17 100%);
+  border: 1px solid rgba(255, 77, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.premium-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #FF4D00, transparent);
+  animation: glow-line 3s ease-in-out infinite;
+}
+
+.premium-card:hover {
+  border-color: rgba(255, 77, 0, 0.3);
+  box-shadow: 0 0 40px rgba(255, 77, 0, 0.1);
+}
+
+/* =====================================================
+   Glass Effect - Premium
+   ===================================================== */
+.glass {
+  background: rgba(26, 26, 23, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* =====================================================
+   Noise/Grain Overlay
+   ===================================================== */
+.noise-overlay {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  right: -50%;
+  bottom: -50%;
+  width: 200%;
+  height: 200%;
+  background: transparent url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E") repeat;
+  opacity: 0.03;
+  pointer-events: none;
+  animation: grain 8s steps(10) infinite;
+  z-index: 1000;
+}
+
+/* =====================================================
+   Custom Cursor
+   ===================================================== */
+.cursor-ember {
+  cursor: none;
+}
+
+/* =====================================================
+   Text Utilities
+   ===================================================== */
+.text-balance {
+  text-wrap: balance;
+}
+
+.tracking-tight {
+  letter-spacing: -0.02em;
+}
+
+.tracking-wider {
+  letter-spacing: 0.2em;
+}
+
+/* =====================================================
+   Focus Styles - Ember Ring
+   ===================================================== */
+.focus-ring:focus-visible {
+  outline: 2px solid #FF4D00;
+  outline-offset: 2px;
+}
+
+/* =====================================================
+   Hide scrollbar but keep functionality
+   ===================================================== */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* =====================================================
+   Ember Button Glow
+   ===================================================== */
+.ember-button {
+  position: relative;
+  background: transparent;
+  border: 1px solid #FF4D00;
+  color: #FF4D00;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.ember-button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #FF4D00;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+  z-index: -1;
+}
+
+.ember-button:hover {
+  color: #1A1A17;
+  box-shadow: 0 0 30px rgba(255, 77, 0, 0.5);
+}
+
+.ember-button:hover::before {
+  transform: scaleX(1);
+}
+
+/* =====================================================
+   Line Decoration
+   ===================================================== */
+.line-decoration {
+  position: relative;
+}
+
+.line-decoration::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, #FF4D00, transparent);
+}
